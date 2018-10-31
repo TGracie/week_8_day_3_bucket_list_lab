@@ -3,14 +3,14 @@ const ObjectID = require('mongodb').ObjectID;
 
 const createRouter = function (collection) {
 
-  const router = express.router();
+  const router = express.Router();
 
     // INDEX
     router.get('/', (req,res) => {
       collection
       .find()
       .toArray()
-      .then((docs) => res.jeson(docs));
+      .then((docs) => res.json(docs));
     })
 
     // CREATE
@@ -19,7 +19,7 @@ const createRouter = function (collection) {
       collection
       .insertOne(newData)
       .then(() => collection.find().toArray())
-      .then((docs) => res.jeson(docs));
+      .then((docs) => res.json(docs));
     })
 
     // DESTROY

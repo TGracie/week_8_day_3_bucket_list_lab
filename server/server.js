@@ -11,14 +11,14 @@ app.use(express.static(publicPath));
 app.use(parser.json());
 
 MongoClient.connect('mongodb://localhost:27017')
-.then((client) => {
-    const db = client.db('bucket_list');
-    const listCollection = db.collection('list');
-    const listRouter = createRouter(listCollection);
-    app.use('/api/games', listRouter);
-    })
-    .catch(console.error('Error Error Error!!'));
+  .then((client) => {
+      const db = client.db('bucket_list');
+      const listCollection = db.collection('list');
+      const listRouter = createRouter(listCollection);
+      app.use('/api/list', listRouter);
+      })
+  .catch(console.error('Error Error Error!!'));
 
 app.listen(3000, function() {
-  console.log(`listening on port ${this.address().port}`);
+  console.log(`---------LISTENING ON PORT: ${this.address().port}--------------`);
 });
