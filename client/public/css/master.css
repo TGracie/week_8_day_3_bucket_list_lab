@@ -1,0 +1,47 @@
+body {
+  background: url(../images/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* .wrapper{
+  display: grid;
+  grid-template-columns: 30% 70%;
+} */
+
+#list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+#list-form {
+  background: hsla(230, 12%, 100%, 0.61);
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+#item {
+  background: hsla(230, 12%, 100%, 0.71);
+  /* border: 1px solid red; */
+  border-radius: 8px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  background: url(../images/delete.jpg);
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+button.delete-btn {
+  border: none;
+  padding: 0;
+  border-radius: 8px;
+}

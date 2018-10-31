@@ -22,6 +22,19 @@ const createRouter = function (collection) {
       .then((docs) => res.json(docs));
     })
 
+    //UPDATE
+    router.put('/:id', (req, res) => {
+      const updatedData = req.body;
+      const ID = req.params.id;
+      collection
+      .updateOne(
+        {_id: ObjectID(ID)},
+        {$set: updatedData}
+      )
+      .then(() => collection.find().toArray())
+      .then((docs) => res.json(docs));
+    });
+
     // DESTROY
     router.delete('/:id', (req, res) =>{
       collection

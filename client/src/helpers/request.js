@@ -1,12 +1,22 @@
-const PubSub = {
- publish: function (channel, payload) {
-  const event = new CustomEvent(channel, {
-   detail: payload
-  });
-  document.dispatchEvent(event);
- },
- subscribe: function (channel, callback) {
-  document.addEventListener(channel, callback);
- }
+const Request = function (url) {
+  this.url = url;
 };
-module.exports = PubSub;
+Request.prototype.get = function () {
+  return fetch(this.url)
+    .then((response) => response.json());
+};
+Request.prototype.post = function (payload) {
+  return fetch(this.url, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then((response) => response.json());
+};
+Request.prototype.delete = function (id) {
+  return fetch(`${this.url}/${id}`, {
+    method: 'DELETE'
+  })
+    .then((response) => response.json());
+};
+module.exports = Request;

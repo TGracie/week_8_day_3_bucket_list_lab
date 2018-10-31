@@ -3,9 +3,9 @@ const GridView = require('./views/grid_view.js');
 const Items = require('./models/items.js');
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Good Morning Thomas (and Jordan). How are things today? I believe in you! JS is loaded by the way.'));
+  console.log('Good Morning Thomas (and Jordan). How are things today? I believe in you! JS is loaded by the way.');
   const inputForm = document.querySelector('#list-form');
-  const formView = new formView(inputForm);
+  const formView = new FormView(inputForm);
   formView.bindEvents();
 
   const listContainer = document.querySelector('#list');
