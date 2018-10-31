@@ -23,6 +23,9 @@ ItemView.prototype.render = function (item) {
   const deleteButton = this.createDeleteButton(item._id);
   itemContainer.appendChild(deleteButton);
 
+  // const statusToggle = this.createToggle(item._id);
+  // itemContainer.appendChild(statusToggle);
+
   this.container.appendChild(itemContainer)
 };
 
@@ -56,15 +59,16 @@ ItemView.prototype.createDeleteButton = function (itemId) {
   return button
 };
 
-ItemView.prototype.createToggle = function (itemId) {
-  const status = document.createElement('checkbox');
-  status.classList.add('slider');
-  button.value = itemId;
-
-  status.addEventListener('click', (evt) => {
-    PubSub.publish('ItemView:status-update-clicked', evt.target.value);
-  });
-  return status
-};
+// ItemView.prototype.createToggle = function (itemId) {
+//   const status = document.createElement('button');
+//   status.classList.add('slider');
+//   status.value = itemId;
+//
+//   status.addEventListener('click', (evt) => {
+//     console.log("BUTTON CLICKED", evt.target);
+//     PubSub.publish('ItemView:status-update-clicked', evt.target.value);
+//   });
+//   return status;
+// };
 
 module.exports = ItemView;

@@ -11,6 +11,11 @@ body {
   grid-template-columns: 30% 70%;
 } */
 
+.slider {
+  width: 20px;
+  height: 20px;
+}
+
 #list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

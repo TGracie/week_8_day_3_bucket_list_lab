@@ -12,7 +12,9 @@ Items.prototype.bindEvents = function () {
   });
   PubSub.subscribe('FormView:item-submitted', (evt) => {
     this.postItem(evt.detail);
-  })
+  });
+  PubSub.subscribe('ItemView:status-update-clicked', (evt) => {this.updateItem(evt.detail);
+  });
 };
 
 Items.prototype.getData = function () {
@@ -39,5 +41,14 @@ Items.prototype.deleteItem = function (itemId) {
   })
   .catch(console.error);
 };
+
+// Items.prototype.updateItem = function (itemId) {
+//   // console.log(itemId);
+//   this.request.update(itemId)
+//   .then((items) => {
+//     PubSub.publish('Items:data-loaded', items);
+//   })
+//   .catch(console.error);
+// };
 
 module.exports = Items;
