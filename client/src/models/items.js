@@ -13,8 +13,8 @@ Items.prototype.bindEvents = function () {
   PubSub.subscribe('FormView:item-submitted', (evt) => {
     this.postItem(evt.detail);
   });
-  PubSub.subscribe('ItemView:status-update-clicked', (evt) => {this.updateItem(evt.detail);
-  });
+  // PubSub.subscribe('ItemView:status-update-clicked', (evt) => {this.updateItem(evt.detail);
+  // });
 };
 
 Items.prototype.getData = function () {

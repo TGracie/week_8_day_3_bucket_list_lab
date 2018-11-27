@@ -11,11 +11,6 @@ body {
   grid-template-columns: 30% 70%;
 } */
 
-.slider {
-  width: 20px;
-  height: 20px;
-}
-
 #list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -49,4 +44,15 @@ button.delete-btn {
   border: none;
   padding: 0;
   border-radius: 8px;
+}
+
+.slider {
+  width: 20px;
+  height: 20px;
+}
+
+button.slider {
+  border: none;
+  padding: 0;
+  border-radius: 5px;
 }
